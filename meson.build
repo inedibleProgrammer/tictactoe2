@@ -6,25 +6,14 @@ project(
   default_options : ['warning_level=3'],
 )
 
+top_build_dir = meson.current_build_dir()
+top_source_dir = meson.current_source_dir()
+
 gtest_proj = subproject('gtest')
-gtest_dep = gtest_proj.get_variable('gtest_main_dep')
-gmock_dep = gtest_proj.get_variable('gmock_dep')
-
-app_src = files('tictactoe2.cc')
-
-test_src = files('test_ttt.cc')
 
 
-dependencies = [
-  gtest_dep,
-  gmock_dep
-]
+subdir('ttt')
+subdir('test')
+# subdir('cli')
 
-exe = executable(
-  'test_ttt',
-  test_src,
-  dependencies : dependencies,
-  install : true,
-)
 
-test('test_ttt', exe)
