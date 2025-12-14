@@ -12,3 +12,5 @@ ttt_dep = declare_dependency(
   link_with: ttt_lib
 )
 
+
+subdir('test')

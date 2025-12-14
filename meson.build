@@ -13,7 +13,8 @@ gtest_proj = subproject('gtest')
 
 
 subdir('ttt')
-subdir('test')
+subdir('terminal')
+# subdir('test')
 # subdir('cli')
 
 
